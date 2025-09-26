@@ -15,6 +15,7 @@ import {
   Banknote,
   Gauge,
   GraduationCap,
+  Share,
   type LucideIcon,
 } from "lucide-react";
 
@@ -134,6 +135,12 @@ export const sidebarItems: NavGroup[] = [
         url: "/dashboard/coming-soon",
         icon: Lock,
         comingSoon: true,
+      },
+      {
+        title: "File Sharing",
+        url: "/home/file-sharing",
+        icon: Share,
+        isNew: true,
       },
       {
         title: "Authentication",
