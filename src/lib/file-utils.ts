@@ -1,9 +1,12 @@
+import React from 'react';
 import { FILE_SHARING_CONFIG } from '@/config/file-sharing'
 
+type IconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>;
+
 /**
- * Get file type icon based on file extension or mime type
+ * Get file type icon component based on file extension or mime type
  */
-export function getFileIcon(fileName: string): string {
+export function getFileIcon(fileName: string): IconComponent {
   const extension = fileName.split('.').pop()?.toLowerCase() || ''
   return FILE_SHARING_CONFIG.fileIcons[extension as keyof typeof FILE_SHARING_CONFIG.fileIcons] || FILE_SHARING_CONFIG.fileIcons.default
 }

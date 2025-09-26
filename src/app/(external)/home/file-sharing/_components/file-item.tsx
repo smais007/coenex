@@ -30,7 +30,7 @@ export function FileItem({ file }: FileItemProps) {
     action: "download",
   });
 
-  const fileIcon = getFileIcon(file.file_name);
+  const FileIconComponent = getFileIcon(file.file_name);
   const isExpired = file.expiry_date ? isAfter(new Date(), new Date(file.expiry_date)) : false;
 
   // Calculate days until expiry
@@ -74,7 +74,9 @@ export function FileItem({ file }: FileItemProps) {
     <>
       <div className="hover:bg-muted/50 flex items-center justify-between rounded-lg border p-4 transition-colors">
         <div className="flex min-w-0 flex-1 items-center space-x-4">
-          <div className="text-2xl">{fileIcon}</div>
+          <div className="text-2xl">
+            <FileIconComponent className="h-8 w-8" />
+          </div>
 
           <div className="min-w-0 flex-1">
             <h3 className="truncate font-medium">{file.file_name}</h3>
