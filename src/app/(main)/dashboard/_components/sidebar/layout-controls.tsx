@@ -29,6 +29,7 @@ export function LayoutControls(props: LayoutControlsProps) {
   const themePreset = usePreferencesStore((s) => s.themePreset);
   const setThemePreset = usePreferencesStore((s) => s.setThemePreset);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleValueChange = async (key: string, value: any) => {
     if (key === "theme_mode") {
       updateThemeMode(value);
