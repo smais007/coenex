@@ -17,6 +17,7 @@ interface PublicFileData {
   expiry_date: string | null;
 }
 import { toast } from "sonner";
+import { FolderIcon } from "@/components/icons";
 
 export function FileList() {
   const [files, setFiles] = useState<PublicFileData[]>([]);
@@ -128,7 +129,19 @@ export function FileList() {
                 No files found matching &ldquo;<span className="font-medium">{searchQuery}</span>&rdquo;
               </>
             ) : (
-              "No files uploaded yet"
+              <>
+                <div className="flex flex-col items-center justify-center space-y-2">
+                  <svg width={40} height={40} fill="none" viewBox="0 0 40 40">
+                    <path
+                      stroke="#D5D7DA"
+                      strokeWidth={1.5}
+                      d="M4.75 4A3.25 3.25 0 0 1 8 .75h16c.121 0 .238.048.323.134l10.793 10.793a.46.46 0 0 1 .134.323v24A3.25 3.25 0 0 1 32 39.25H8A3.25 3.25 0 0 1 4.75 36z"
+                    />
+                    <path stroke="#D5D7DA" strokeWidth={1.5} d="M24 .5V8a4 4 0 0 0 4 4h7.5" />
+                  </svg>
+                  <p>No files uploaded yet</p>
+                </div>
+              </>
             )}
           </div>
         </div>
